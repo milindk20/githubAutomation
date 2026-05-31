@@ -67,11 +67,11 @@ Fetch up to 1000 Repos                     Scan for .git Directories
                                                     [Loop Finished]
                                                            |
                                                Return to Starting Directory
+```
+---
 
 
-
-
-**## 🛠 Prerequisites**
+## 🛠 Prerequisites
 Before running these scripts, ensure your environment has the following installed and configured:
 
 GitHub CLI (gh): Required for the cloning script. Install guide here.
@@ -83,25 +83,30 @@ Realpath Utility: Typically pre-installed on Linux distributions (GNU coreutils)
 
 ## 💻 Usage Instructions
 
-1. Cloner Setup
+### 1. Cloner Setup
 Move to the directory where you want your projects saved, and execute the script:
 
 Bash
+```text
 chmod +x clone_git_repos.sh
 ./clone_git_repos.sh
-2. Updater Setup
+```
+### 2. Updater Setup
 You can run the update script without arguments to update the current folder, or target a specific path directly:
 
 Update current folder:
 
 Bash
+```text
 chmod +x update_git_repos.sh
 ./update_git_repos.sh
+```
 Update a target path:
-
 Bash
+```text 
 ./update_git_repos.sh /mnt/MyDisk/Documents/Projects_Github
-⚙️ Advanced Features Handled
+```
+## ⚙️ Advanced Features Handled
 Safe Directory Bypass (-c safe.directory='*'): Fixes the common strict ownership error blocks triggered when Git repos live on external drives or mounted volumes (/mnt/...).
 
 Auto-Stash Recovery: If you have uncommitted changes in a project, the script generates a temporary "Auto-stash before auto-update" save point, pulls the remote updates via rebase, and cleanly restores your local workspace seamlessly.
